@@ -1,0 +1,220 @@
+// Variable
+$text: #333333;
+$grey: #b1b6ba;
+$lightgrey: #dddddd;
+$blue: #6a96d8;
+$lightblue: #e6edf6;
+$lightred: #ffc2c1;
+$white: #ffffff;
+$light: #f2f2f2;
+$border: #ebebeb;
+$shadow: 5px 10px 30px rgba(0, 0, 0, 0.2);
+
+// Reset
+* {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+// Body
+body {
+    background: $light;
+    color: $text;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.chat {
+
+    &-box {
+        background: $white;
+        box-shadow: $shadow;
+        margin: 80px auto;
+        width: 400px;
+        border-radius: 10px;
+    }
+
+    &-header {
+        background: $blue;
+        padding: 20px;
+        position: relative;
+    }
+
+    &-title {
+        color: $white;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 20px;
+        margin: 0;
+        padding: 0 0 0 25px;
+        text-transform: uppercase;
+
+        &:before {
+            content: '·';
+            display: inline-block;
+            font-size: 40px;
+            line-height: 20px;
+            position: absolute;
+            top: 32.5%;
+            left: 20px;
+        }
+
+    }
+
+    &-close {
+        color: $light;
+        display: inline-block;
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        text-decoration: none;
+        transform: translateY(-50%);
+        transition: all 0.2s ease-out;
+
+        &:hover,
+        &:active {
+            color: $white;
+        }
+
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    &-timeline {
+        text-align: center;
+        padding: 20px 0 10px 0;
+
+        &:after {
+            background: $lightgrey;
+            content: '';
+            display: block;
+            height: 1px;
+            position: relative;
+            top: -10px;
+        }
+
+        &>span {
+            background: $white;
+            color: $lightgrey;
+            display: inline-block;
+            font-weight: bold;
+            padding: 0 10px;
+            position: relative;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+    }
+
+
+    &-time {
+        display: block;
+        color: $grey;
+        padding: 0;
+        margin: 0 0 5px;
+
+        .is-me>& {
+            text-align: right;
+        }
+
+    }
+
+    &-message {
+        border-radius: 10px;
+        margin: 0 0 20px;
+        max-width: 75%;
+        padding: 10px;
+        position: relative;
+
+        .is-me>& {
+            background: $light;
+            float: right;
+
+            &:before {
+                border-left: 5px solid transparent;
+                border-top: 5px solid $light;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                content: '';
+                display: block;
+                height: 0;
+                width: 0;
+                position: absolute;
+                top: 0;
+                right: -5px;
+            }
+
+        }
+
+        .is-you>& {
+            background: $lightblue;
+
+            &:before {
+                border-left: 5px solid transparent;
+                border-top: 5px solid $lightblue;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                content: '';
+                display: block;
+                height: 0;
+                width: 0;
+                position: absolute;
+                top: 0;
+                left: -5px;
+            }
+        }
+
+        .is-warning>& {
+            background: $lightred;
+            float: right;
+        }
+
+    }
+
+    &-form {
+
+        border-top: 1px solid $lightgrey;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        &-input {
+            border: none;
+            flex-grow: 1;
+            margin: 0;
+        }
+
+    }
+
+}
+
+.button {
+    border: 0;
+    background: transparent;
+    color: $blue;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        opacity: 0.8;
+    }
+}
