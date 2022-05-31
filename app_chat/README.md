@@ -1,7 +1,7 @@
 # Simple App Chat
 
 ### Screenshot
-<img src="./image.png">
+<img src="./Image.png">
 
 ### Teknologi
 - SCSS
